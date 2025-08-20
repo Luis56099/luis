@@ -1,0 +1,29 @@
+body {background-color:aquamarine;}
+
+
+
+.parrafo {
+    color: brown;
+    background-color:beige
+}
+#2{
+    color: black;
+}
+
+#contenedor1 {
+    width: 50vw;
+    height: 80vh;
+    border: 1px solid black;
+    margin: 15px;
+}
+
+#contenedor2 {
+    width: 50vw;
+    height: 80vh;
+    border: 1px solid black;
+}
+.cuadrado{
+    width: 25vw;
+    height: 25vh;
+    border: 1px solid black;
+}
