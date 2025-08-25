@@ -15,15 +15,43 @@ body {background-color:aquamarine;}
     height: 80vh;
     border: 1px solid black;
     margin: 15px;
+    position: relative;
 }
 
 #contenedor2 {
     width: 50vw;
     height: 80vh;
     border: 1px solid black;
+    margin: 15px;
+    display:flex;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+    align-items: center;
 }
 .cuadrado{
-    width: 25vw;
-    height: 25vh;
+    width: 25%;
+    height: 25%;
+    background-color: beige;
+    border: 1px solid black;
+    position:absolute;
+}
+
+#cuadro1 {
+    top: 0%;
+    left: 0%;
+}
+#cuadro2 {
+    top: 25%;
+    left: 25%;
+}
+#cuadro3 {
+    top: 50%;
+    left: 50%;
+}
+
+.cuadro{
+    width: 25%;
+    height: 25%;
+    background-color: beige;
     border: 1px solid black;
 }
