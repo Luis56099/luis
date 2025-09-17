@@ -1,20 +1,65 @@
-
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="es">
 <head>
-    <title>hola</title>
-    <link rel="stylesheet" href="estilo.css">
-    <script src="script.js" defer></script>
-
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cancha de Fútbol</title>
+  <link rel="stylesheet" href="css/styles.css">
 </head>
-
 <body>
-<h1 class="titulo" id="tituloprincipal">esto es una pagina web</h1>
-<p class="parrafo">esto es un parrafo</p>
-<p class="parrafo"id="2">esto es un parrafo</p>
-<p class="parrafo">y uno mas</p>
+  <header class="site-header">
+    <h1>⚽ Cancha de Fútbol Europeo</h1>
+    <p>Pasa el mouse sobre cada jugador para conocerlo</p>
+  </header>
 
+  <main>
+    <!-- Áreas grandes -->
+<div class="goal-area top"></div>
+<div class="goal-area bottom"></div>
 
+<!-- Áreas chicas -->
+<div class="small-area top"></div>
+<div class="small-area bottom"></div>
 
+<!-- Puntos de penalti -->
+<div class="penalty top"></div>
+<div class="penalty bottom"></div>
+    <div class="field">
+      <!-- 22 jugadores -->
+      <!-- Equipo A -->
+      <div class="player" style="top:5%; left:45%;" data-name="Portero A" data-info="Reflejos rápidos y gran seguridad bajo palos."></div>
+      <div class="player" style="top:20%; left:15%;" data-name="Defensa A1" data-info="Central sólido con gran juego aéreo."></div>
+      <div class="player" style="top:20%; left:75%;" data-name="Defensa A2" data-info="Central rápido y agresivo."></div>
+      <div class="player" style="top:35%; left:30%;" data-name="Lateral A1" data-info="Defiende y ataca por la banda izquierda."></div>
+      <div class="player" style="top:35%; left:60%;" data-name="Lateral A2" data-info="Apoyo constante por la banda derecha."></div>
+      <div class="player" style="top:50%; left:40%;" data-name="Medio A1" data-info="Gran visión de juego y pase."></div>
+      <div class="player" style="top:50%; left:50%;" data-name="Medio A2" data-info="Recuperador incansable."></div>
+      <div class="player" style="top:65%; left:30%;" data-name="Extremo A1" data-info="Velocidad y desborde por la izquierda."></div>
+      <div class="player" style="top:65%; left:60%;" data-name="Extremo A2" data-info="Regateador nato por la derecha."></div>
+      <div class="player" style="top:80%; left:40%;" data-name="Delantero A1" data-info="Gran rematador dentro del área."></div>
+      <div class="player" style="top:80%; left:50%;" data-name="Delantero A2" data-info="Segundo punta con movilidad."></div>
 
+      <!-- Equipo B -->
+      <div class="player playerB" style="top:95%; left:45%;" data-name="Portero B" data-info="Seguro y con buena salida de balón."></div>
+      <div class="player playerB" style="top:80%; left:15%;" data-name="Defensa B1" data-info="Central fuerte físicamente."></div>
+      <div class="player playerB" style="top:80%; left:75%;" data-name="Defensa B2" data-info="Central con buena salida."></div>
+      <div class="player playerB" style="top:65%; left:30%;" data-name="Lateral B1" data-info="Ataca por la banda izquierda."></div>
+      <div class="player playerB" style="top:65%; left:60%;" data-name="Lateral B2" data-info="Cubre la banda derecha."></div>
+      <div class="player playerB" style="top:50%; left:40%;" data-name="Medio B1" data-info="Organizador del equipo."></div>
+      <div class="player playerB" style="top:50%; left:50%;" data-name="Medio B2" data-info="Gran despliegue físico."></div>
+      <div class="player playerB" style="top:35%; left:30%;" data-name="Extremo B1" data-info="Encara por la izquierda."></div>
+      <div class="player playerB" style="top:35%; left:60%;" data-name="Extremo B2" data-info="Potente disparo."></div>
+      <div class="player playerB" style="top:20%; left:40%;" data-name="Delantero B1" data-info="Goleador de área."></div>
+      <div class="player playerB" style="top:20%; left:50%;" data-name="Delantero B2" data-info="Delantero rápido y hábil."></div>
+    </div>
+  </main>
+
+  <div id="tooltip" class="tooltip"></div>
+
+  <footer class="site-footer">
+    <p>&copy; <span id="year"></span> Cancha Interactiva ⚽</p>
+  </footer>
+
+  <script src="js/script.js"></script>
 </body>
+</html>

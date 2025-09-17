@@ -1,21 +1,22 @@
-const titulo = document.getElementById("tituloprincipal");
-let estadoOriginal = true;
+// Año dinámico
+document.getElementById("year").textContent = new Date().getFullYear();
 
+const players = document.querySelectorAll(".player");
+const tooltip = document.getElementById("tooltip");
 
-
-console.log(titulo);
-titulo.addEventListener("click", () => {
-if(estadoOriginal=== true){
-    titulo.innerText = "de pagina web";
-    titulo.style.color = "green";
-
-}
- 
-else {
-    titulo.innerText = "Un nuevo titulo";
-    titulo.style.color = "red";
-}
-
-estadoOriginal = !estadoOriginal;
-
+// Mostrar tooltip al pasar el mouse
+players.forEach(player => {
+  player.addEventListener("mouseenter", e => {
+    const name = player.dataset.name;
+    const info = player.dataset.info;
+    tooltip.innerHTML = `<strong>${name}</strong><br>${info}`;
+    tooltip.style.display = "block";
+  });
+  player.addEventListener("mousemove", e => {
+    tooltip.style.top = (e.pageY + 15) + "px";
+    tooltip.style.left = (e.pageX + 15) + "px";
+  });
+  player.addEventListener("mouseleave", () => {
+    tooltip.style.display = "none";
+  });
 });
