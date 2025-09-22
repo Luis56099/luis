@@ -1,120 +1,149 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather&family=Merriweather+Sans:wght@300&display=swap");
+
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background: #006400;
-  color: white;
+  font-family: "Amasis MT", sans-serif;
+  color: gold;
+  background-color: black;
+}
+
+.container {
+  max-width: 1280px;
+  width: 95%;
+  margin: 0 auto;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
+  font-family: "Merriweather", serif;
+  height: 30vh;
+  color: black;
+  background-color: green; /* césped de cancha */
 }
 
-.site-header {
-  padding: 1rem;
-  background: #004d00;
+header h2 {
+  font-weight: 400;
 }
 
-/* Cancha */
-.field {
-  position: relative;
-  width: 90%;
-  max-width: 900px;
-  aspect-ratio: 2 / 3; /* Proporción vertical */
-  margin: 2rem auto;
-  background: #228B22;
-  border: 5px solid white;
-  border-radius: 10px;
+.scroll-container {
+  height: 100vh;
+  min-height: 450px;
+  padding: 2rem 1rem;
+  display: flex;
+  align-items: center;
   box-sizing: border-box;
 }
 
-/* Línea central */
-.field::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background: white;
-  transform: translateY(-50%);
+.scroll-element,
+.scroll-caption {
+  width: 50%;
 }
 
-/* Círculo central */
-.field::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 120px;
-  height: 120px;
-  border: 2px solid white;
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
+.scroll-element {
+  min-height: 300px;
+  height: 100%;
+  background-color: black;
 }
 
-/* Áreas grandes */
-.goal-area {
-  position: absolute;
-  width: 200px;
-  height: 300px;
-  border: 2px solid white;
+.scroll-caption {
+  margin: 1rem;
 }
 
-.goal-area.top { top: 0; left: 50%; transform: translateX(-50%); }
-.goal-area.bottom { bottom: 0; left: 50%; transform: translateX(-50%); }
-
-/* Áreas chicas */
-.small-area {
-  position: absolute;
-  width: 100px;
-  height: 150px;
-  border: 2px solid white;
+footer {
+  text-align: center;
+  padding: 0.5rem 0;
+  background-color: #faddad;
 }
 
-.small-area.top { top: 0; left: 50%; transform: translateX(-50%); }
-.small-area.bottom { bottom: 0; left: 50%; transform: translateX(-50%); }
-
-/* Punto de penalti */
-.penalty {
-  position: absolute;
-  width: 6px;
-  height: 6px;
-  background: white;
-  border-radius: 50%;
+footer p {
+  font-size: 0.75rem;
+  margin: 0.25rem 0;
+  color: #221133;
 }
 
-.penalty.top { top: 15%; left: 50%; transform: translateX(-50%); }
-.penalty.bottom { bottom: 15%; left: 50%; transform: translateX(-50%); }
-
-/* Jugadores */
-.player {
-  position: absolute;
-  width: 35px;
-  height: 35px;
-  background: blue;
-  border-radius: 50%;
-  border: 2px solid white;
-  cursor: pointer;
-  transition: transform .2s;
-}
-.player:hover { transform: scale(1.2); }
-
-.playerB { background: red; }
-
-/* Tooltip */
-.tooltip {
-  position: absolute;
-  background: rgba(0,0,0,0.8);
-  color: white;
-  padding: .5rem;
-  border-radius: 6px;
-  font-size: .9rem;
-  pointer-events: none;
-  display: none;
-  max-width: 200px;
-  text-align: left;
+footer a {
+  text-decoration: none;
+  color: inherit;
 }
 
-/* Footer */
-.site-footer {
-  background: #004d00;
-  padding: 1rem;
-  margin-top: 2rem;
+@media screen and (max-width: 650px) {
+  .scroll-container {
+    flex-direction: column;
+  }
+
+  .scroll-element,
+  .scroll-caption {
+    width: 100%;
+  }
+}
+
+.js-scroll {
+  opacity: 0;
+  transition: opacity 500ms;
+}
+
+.js-scroll.scrolled {
+  opacity: 1;
+}
+
+.scrolled.fade-in {
+  animation: fade-in 1s ease-in-out both;
+}
+
+.scrolled.fade-in-bottom {
+  animation: fade-in-bottom 1s ease-in-out both;
+}
+
+.scrolled.slide-left {
+  animation: slide-in-left 1s ease-in-out both;
+}
+
+.scrolled.slide-right {
+  animation: slide-in-right 1s ease-in-out both;
+}
+
+@keyframes slide-in-left {
+  0% {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in-right {
+  0% {
+    transform: translateX(100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in-bottom {
+  0% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
